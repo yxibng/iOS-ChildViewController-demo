@@ -1,6 +1,6 @@
 //
 //  SecondViewController.swift
-//  ChildController-demo
+//  UIViewController-demo
 //
 //  Created by yxibng on 2020/4/4.
 //  Copyright © 2020 yxibng. All rights reserved.

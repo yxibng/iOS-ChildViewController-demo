@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  ChildController-demo
+//  UIViewController-demo
 //
 //  Created by yxibng on 2020/4/4.
 //  Copyright © 2020 yxibng. All rights reserved.
@@ -31,7 +31,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-
-
 }
+
+extension UIViewController {
+    
+    func addChildViewController(_ viewController: UIViewController?) {
+        
+        guard let child = viewController else {
+            return
+        }
+        
+        self.addChild(child)
+        self.view.addSubview(child.view)
+        child.view.frame = self.view.bounds
+        child.didMove(toParent: self)
+    }
+    
+    func removeFromParentController() {
+        self.willMove(toParent: nil)
+        self.view.removeFromSuperview()
+        self.removeFromParent()
+    }
+    
+    
+}
+
+
 
